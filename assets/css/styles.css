@@ -136,7 +136,6 @@ img{max-width:100%}
 .cat-grid:hover .cat-card:not(:hover){transform:scale(0.97);opacity:.7}
 .cat-card:hover{transform:translateY(-8px);border-color:var(--red);box-shadow:0 28px 54px -24px rgba(226,3,3,.4)}
 .cat-card .overlay{position:absolute;inset:0;background-size:cover;background-position:center 30%;pointer-events:none}
-.cat-card .overlay.has-img{background-image:linear-gradient(to top,rgba(10,9,8,.92) 8%,rgba(10,9,8,.35) 55%,rgba(10,9,8,.15)),var(--bgimg)}
 .cat-card .icon{position:relative;width:44px;height:44px;border-radius:12px;background:var(--red-soft);color:var(--red);display:grid;place-items:center;transition:transform .25s ease,background .25s ease,color .25s ease}
 .cat-card:hover .icon{background:var(--red);color:#fff;transform:scale(1.1) rotate(-6deg)}
 .cat-card .body{position:relative;margin-top:auto}
