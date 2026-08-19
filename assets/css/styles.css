@@ -25,6 +25,7 @@ img{max-width:100%}
 @keyframes ka-scan{0%{left:-45%}55%,100%{left:120%}}
 @keyframes ka-pulse{0%{box-shadow:0 0 0 0 rgba(226,3,3,.45);opacity:1}100%{box-shadow:0 0 0 26px rgba(226,3,3,0);opacity:.6}}
 @keyframes ka-drift{0%{transform:translateY(30px);opacity:0}20%{opacity:.9}80%{opacity:.9}100%{transform:translateY(-70px);opacity:0}}
+@keyframes ka-trace{0%{stroke-dashoffset:700}100%{stroke-dashoffset:0}}
 @keyframes ka-ping{0%{transform:translate(-50%,-50%) scale(.4);opacity:.7}100%{transform:translate(-50%,-50%) scale(2.6);opacity:0}}
 @keyframes ka-dash{to{stroke-dashoffset:-40}}
 @keyframes waPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
@@ -82,6 +83,13 @@ img{max-width:100%}
    ========================================================================== */
 .hero{position:relative;overflow:hidden;background:var(--ink);color:#fff}
 .hero-glow{position:absolute;inset:0;background:radial-gradient(60% 90% at 82% 12%, rgba(226,3,3,.28), transparent 60%);pointer-events:none}
+.hero-tech{position:absolute;inset:0;pointer-events:none;overflow:hidden;transition:transform .3s ease-out}
+.hero-tech-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:46px 46px;-webkit-mask-image:radial-gradient(150% 130% at 50% 40%,#000 62%,transparent 100%);mask-image:radial-gradient(150% 130% at 50% 40%,#000 62%,transparent 100%);animation:ka-grid 5s linear infinite}
+.hero-tech-svg{position:absolute;inset:0;opacity:.55}
+.hero-tech-paths{animation:ka-trace 5s ease-out forwards}
+.hero-dot{position:absolute;border-radius:50%}
+.hero-scan{position:absolute;top:0;bottom:0;left:-45%;width:55%;background:linear-gradient(90deg,transparent,rgba(226,3,3,.12),transparent);animation:ka-scan 8s ease-in-out infinite;animation-delay:1.5s}
+.hero-spot{position:absolute;top:0;left:0;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(226,3,3,.28),rgba(226,3,3,.08) 40%,transparent 68%);opacity:0;transform:translate(-50%,-50%);transition:opacity .35s ease;will-change:transform;mix-blend-mode:screen}
 .hero-orb{position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;background:var(--red);opacity:.14;filter:blur(6px);animation:ka-float 7s ease-in-out infinite;pointer-events:none}
 .hero-grid{position:relative;max-width:1180px;margin:0 auto;padding:64px 20px 72px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase}

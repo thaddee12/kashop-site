@@ -424,8 +424,30 @@
     }
   }
 
+  /* ---------- hero interactif (halo qui suit la souris, parallax léger) ---------- */
+  function initHero() {
+    var hero = document.getElementById('hero-interactive');
+    if (!hero) return;
+    var tech = hero.querySelector('.hero-tech');
+    var spot = hero.querySelector('.hero-spot');
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) return;
+    hero.addEventListener('mousemove', function (e) {
+      var r = hero.getBoundingClientRect();
+      var x = e.clientX - r.left, y = e.clientY - r.top;
+      var px = x / r.width - 0.5, py = y / r.height - 0.5;
+      if (spot) { spot.style.opacity = '1'; spot.style.transform = 'translate(' + x + 'px,' + y + 'px) translate(-50%,-50%)'; }
+      if (tech) { tech.style.transform = 'translate(' + (px * -26) + 'px,' + (py * -26) + 'px)'; }
+    });
+    hero.addEventListener('mouseleave', function () {
+      if (spot) spot.style.opacity = '0';
+      if (tech) tech.style.transform = 'translate(0,0)';
+    });
+  }
+
   /* ---------- légal, menu mobile, WA contact links ---------- */
   function initShared() {
+    initHero();
     document.querySelectorAll('[data-wa-contact]').forEach(function (a) { a.href = KA_WA.buildContactMessage(); });
     document.querySelectorAll('[data-wa-question]').forEach(function (a) { a.href = KA_WA.buildQuestionMessage(); });
     document.querySelectorAll('[data-wa-display]').forEach(function (el) { el.textContent = KA_WA.WA_DISPLAY; });
