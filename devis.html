@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Passez une commande · KA SHOP</title>
+<meta name="description" content="Commandez un produit hors catalogue ou suivez votre commande KA SHOP. Réponse sous 24h par WhatsApp, aucun paiement en ligne requis.">
+<link rel="canonical" href="https://kashop.cm/devis.html">
+<link rel="icon" href="assets/images/logo-kashop.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="devis">
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand"><img src="assets/images/logo-kashop.png" alt="KA SHOP"></a>
+      <nav class="main-nav">
+        <a href="index.html">Accueil</a>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="devis.html" class="active">Commander</a>
+        <a href="apropos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="cart-btn" data-cart-open aria-label="Panier">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <span class="cart-badge" data-cart-badge>0</span>
+      </button>
+      <button class="menu-btn" aria-label="Menu"><span></span></button>
+    </div>
+    <div class="mobile-panel">
+      <a href="index.html">Accueil</a>
+      <a href="catalogue.html">Catalogue</a>
+      <a href="devis.html" class="active">Commander</a>
+      <a href="apropos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="deco-section">
+    <div class="deco-glow"></div>
+    <div class="deco-grid">
+      <div class="lines"></div>
+      <span class="dot" style="left:8%;top:12%;width:8px;height:8px;animation-delay:0s"></span>
+      <span class="dot ink" style="left:4%;top:44%;width:6px;height:6px;animation-delay:.8s"></span>
+      <span class="dot" style="left:11%;top:74%;width:7px;height:7px;animation-delay:1.5s"></span>
+      <span class="dot" style="left:92%;top:20%;width:8px;height:8px;animation-delay:.4s"></span>
+      <span class="dot ink" style="left:96%;top:56%;width:6px;height:6px;animation-delay:1.1s"></span>
+      <span class="dot" style="left:89%;top:82%;width:7px;height:7px;animation-delay:2s"></span>
+      <div class="scan" style="animation-delay:1s"></div>
+    </div>
+      <div class="page-wrap narrow">
+      <div class="devis-hero">
+        <div class="devis-hero-bg"></div>
+        <div class="devis-hero-veil"></div>
+        <div class="devis-hero-inner">
+          <span class="page-eyebrow">Produit spécifique &middot; sur commande</span>
+          <h1 class="page-title">Passez une commande</h1>
+          <p>Un produit hors catalogue, une pièce importée ou une grande quantité&nbsp;? Commandez-le sur mesure, et suivez l'état de votre commande jusqu'à la boutique.</p>
+        </div>
+      </div>
+
+      <div class="track-card">
+        <div class="track-bg"></div>
+        <div class="track-veil"></div>
+        <div class="track-inner">
+          <div class="track-head">
+            <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
+            <div><h3>Suivre ma commande</h3><p>Entrez votre numéro de commande pour voir où elle en est</p></div>
+          </div>
+          <div class="track-form" id="track-form">
+            <input type="text" id="track-ref" placeholder="Ex. KA-1042">
+            <button type="button" id="track-btn">Suivre</button>
+          </div>
+          <p class="track-hint">Exemples de démo&nbsp;: KA-1042 &middot; KA-1039 &middot; KA-1025 &middot; KA-1011</p>
+          <div class="track-error" id="track-error">Commande introuvable. Vérifiez le numéro (ex. KA-1042).</div>
+          <div class="track-result" id="track-result">
+            <div class="track-result-head"><span class="ref" id="track-ref-out"></span><span class="eta" id="track-eta-out"></span></div>
+            <div id="track-steps"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-success" id="quote-success">
+        <span class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span>
+        <h2>Demande prête à envoyer</h2>
+        <p>Votre message WhatsApp s'est ouvert dans un nouvel onglet. Envoyez-le tel quel, on vous répond sous 24h.</p>
+        <div class="quote-success-actions">
+          <a href="#" id="quote-reopen" target="_blank" rel="noopener" class="btn btn-wa" style="height:50px;padding:0 24px;">Rouvrir WhatsApp</a>
+          <button id="quote-new" class="btn-outline">Nouvelle demande</button>
+        </div>
+      </div>
+
+      <form class="quote-form" id="quote-form" novalidate>
+        <label>
+          <span class="lbl">Nom complet <span class="req">*</span></span>
+          <input type="text" id="q-nom" placeholder="Ex. Jean Mballa">
+          <span class="field-err" id="err-nom">Merci d'indiquer votre nom.</span>
+        </label>
+        <label>
+          <span class="lbl">Téléphone / WhatsApp <span class="req">*</span></span>
+          <input type="tel" id="q-tel" placeholder="Ex. 6 90 00 00 00">
+          <span class="field-err" id="err-tel">Numéro invalide (au moins 8 chiffres).</span>
+        </label>
+        <label>
+          <span class="lbl">Catégorie concernée</span>
+          <select id="q-cat"></select>
+        </label>
+        <label>
+          <span class="lbl">Décrivez votre besoin <span class="req">*</span></span>
+          <textarea id="q-desc" rows="5" placeholder="Modèle, référence, quantité, marque&hellip; tout détail utile."></textarea>
+          <span class="field-err" id="err-desc">Décrivez votre besoin en quelques mots.</span>
+        </label>
+        <button type="submit" class="btn btn-wa" style="height:54px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.3-1.94 1.35-.5.05-1.13.07-1.82-.11-.42-.11-.96-.29-1.65-.58-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-2.99 0-1.42.75-2.12 1.01-2.41.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.65.5.24.58.82 2 .89 2.14.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.29-.12.58.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.68.79 1.97.93.29.14.48.22.55.34.07.12.07.68-.17 1.36Z"></path></svg>
+          Envoyer via WhatsApp
+        </button>
+        <p class="quote-note">Aucun paiement en ligne. On confirme le prix et le délai avec vous.</p>
+      </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-bg"></div>
+    <div class="footer-veil"></div>
+    <div class="footer-badges">
+      <div class="footer-badges-inner">
+        <div class="footer-badge"><span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path><path d="m9 12 2 2 4-4"></path></svg></span><span><span class="t">Produits testés</span><span class="s">Vérifiés devant vous</span></span></div>
+        <div class="footer-badge"><span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9 12 3l9 6v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Z"></path><path d="M9 22V12h6v10"></path></svg></span><span><span class="t">Garantie respectée</span><span class="s">Échange en cas de défaut</span></span></div>
+        <div class="footer-badge"><span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1z"></path><path d="M16 8h4l3 3v5h-7z"></path><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg></span><span><span class="t">Livraison Yaoundé</span><span class="s">Offerte dès 50 000 F</span></span></div>
+        <div class="footer-badge"><span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg></span><span><span class="t">Paiement à la livraison</span><span class="s">MoMo · OM · Espèces</span></span></div>
+      </div>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <img src="assets/images/logo-kashop-light.png" alt="KA SHOP">
+        <p class="tagline">La confiance qui va vite.</p>
+        <p class="desc">Distributeur d'équipements électroniques et accessoires à Yaoundé, Cameroun.</p>
+      </div>
+      <div>
+        <h4>Boutique</h4>
+        <p>Yaoundé, Cameroun</p>
+        <p>Lun&ndash;Sam &middot; 8h30 &ndash; 18h30</p>
+        <p>WhatsApp&nbsp;: <span data-wa-display></span></p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <div class="footer-links">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="devis.html">Passez une commande</a>
+          <a href="apropos.html">À propos</a>
+          <a href="contact.html">Contact &amp; itinéraire</a>
+          <button data-cart-open>Mon panier</button>
+        </div>
+      </div>
+      <div>
+        <h4>Aide &amp; garanties</h4>
+        <div class="footer-links">
+          <a href="index.html#faq">Questions fréquentes</a>
+          <button data-open-legal>Mentions légales</button>
+          <button data-open-cgv>Conditions générales de vente</button>
+          <a href="#" data-wa-contact target="_blank" rel="noopener">Support WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <span>&copy; 2026 KA SHOP &middot; kashop.cm &middot; <button data-open-legal>Mentions légales</button> &middot; <button data-open-cgv>CGV</button></span>
+        <a href="https://innovaalpha.com" target="_blank" rel="noopener" class="footer-credit"><span>Con&ccedil;u par</span><img src="assets/images/innova-alpha.svg" alt="Innova Alpha"></a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" data-wa-contact target="_blank" rel="noopener" class="wa-float" aria-label="Contacter KA SHOP sur WhatsApp">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.4A10 10 0 1012 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.4-1.1-2.7s.7-1.9 .9-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.5c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.2.1.4.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.2.1.7-.1 1.4z"></path></svg>
+  </a>
+
+  <div class="overlay" id="cart-overlay">
+    <div class="overlay-bg" id="cart-overlay-bg"></div>
+    <aside class="cart-panel">
+      <div class="cart-head">
+        <h2>Votre panier</h2>
+        <button class="icon-btn" data-cart-close aria-label="Fermer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+      </div>
+      <div class="cart-empty" id="cart-empty-state">
+        <span class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></span>
+        <p class="title">Votre panier est vide</p>
+        <p>Ajoutez des produits, puis commandez en un message.</p>
+        <a href="catalogue.html" class="btn btn-red" style="height:48px;padding:0 22px;">Voir le catalogue</a>
+      </div>
+      <div class="cart-body" id="cart-body" style="display:none">
+        <div class="deliv-block">
+          <div class="deliv-head"><b>Livraison</b>
+            <button type="button" class="geo-btn" id="geo-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path></svg>Utiliser ma position</button>
+          </div>
+          <p class="deliv-hint">Placez le point à l'adresse de livraison&nbsp;: le montant se calcule automatiquement.</p>
+          <div class="deliv-map" id="deliv-map">
+            <div class="deliv-ring r15"></div>
+            <div class="deliv-ring r7"></div>
+            <span class="deliv-ring-label" style="top:calc(50% - 70px)">7 km</span>
+            <span class="deliv-ring-label" style="top:calc(50% - 140px)">15 km</span>
+            <div class="shop-pin"><span class="badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"></path></svg></span><span class="lbl">Boutique</span></div>
+            <div class="deliv-pin" id="deliv-pin"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"></path></svg></div>
+          </div>
+          <div class="deliv-result" id="deliv-result">
+            <div class="left"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1z"></path><path d="M16 8h4l3 3v5h-7z"></path><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg><span id="deliv-result-title">Placez le point de livraison</span></div>
+            <span class="fee" id="deliv-result-fee">&middot;&middot;&middot;</span>
+          </div>
+          <span class="geo-err" id="geo-err"></span>
+          <input type="text" class="deliv-addr" id="deliv-addr" placeholder="Adresse / repère (facultatif)">
+        </div>
+      </div>
+      <div class="cart-foot" id="cart-foot" style="display:none">
+        <div class="cart-line"><span>Sous-total</span><b id="cart-sub">0 FCFA</b></div>
+        <div class="cart-line"><span>Livraison</span><b id="cart-fee">à définir</b></div>
+        <div class="cart-line total"><span>Total</span><span id="cart-grand">0 FCFA</span></div>
+        <a href="#" id="cart-wa-btn" target="_blank" rel="noopener" class="cart-wa-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.3-1.94 1.35-.5.05-1.13.07-1.82-.11-.42-.11-.96-.29-1.65-.58-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-2.99 0-1.42.75-2.12 1.01-2.41.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.65.5.24.58.82 2 .89 2.14.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.29-.12.58.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.68.79 1.97.93.29.14.48.22.55.34.07.12.07.68-.17 1.36Z"></path></svg>
+          Commander sur WhatsApp
+        </a>
+        <p class="cart-foot-note">Livraison gratuite dès 50 000 F. Aucun paiement en ligne.</p>
+      </div>
+    </aside>
+  </div>
+
+  <div class="modal-wrap" id="product-modal-wrap">
+    <div class="overlay-bg" id="detail-overlay-bg"></div>
+    <div class="product-modal">
+      <button class="close-btn" data-close-detail aria-label="Fermer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+      <div class="pm-media" id="pm-media"></div>
+      <div class="pm-body">
+        <span class="pm-cat" id="pm-cat"></span>
+        <h2 id="pm-name"></h2>
+        <div class="prod-rating"><span class="prod-stars" style="font-size:16px;letter-spacing:2px">★★★★★<b id="pm-stars-fill">★★★★★</b></span>
+          <span class="num" id="pm-rating-num"></span><span class="count" id="pm-review-count"></span></div>
+        <div class="pm-price"><span class="now" id="pm-price-now"></span><span class="old" id="pm-price-old"></span></div>
+        <p class="pm-desc" id="pm-desc"></p>
+        <div class="pm-stock" id="pm-stock"></div>
+        <button class="pm-add" id="pm-add"></button>
+        <button class="pm-quote-btn" id="pm-quote-btn">Passez une commande</button>
+        <button class="pm-fav" id="pm-fav"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"></path></svg><span>Ajouter aux favoris</span></button>
+        <div class="pm-section">
+          <h3>Avis clients</h3>
+          <div id="pm-reviews"></div>
+        </div>
+        <div class="pm-section" id="pm-similar-section">
+          <h3>Vous aimerez aussi</h3>
+          <div class="pm-similar" id="pm-similar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-wrap" id="legal-modal-wrap">
+    <div class="overlay-bg" id="legal-overlay-bg"></div>
+    <div class="legal-modal">
+      <div class="legal-head">
+        <div class="legal-tabs">
+          <button class="legal-tab active" id="legal-tab-mentions">Mentions légales</button>
+          <button class="legal-tab" id="legal-tab-cgv">CGV</button>
+        </div>
+        <button class="icon-btn" data-close-legal aria-label="Fermer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+      </div>
+      <div class="legal-body">
+        <div class="legal-pane active" id="legal-pane-mentions">
+          <h2>Mentions légales</h2>
+          <div><h3>Éditeur du site</h3><p>KA SHOP, commerce d'équipements électroniques et accessoires. Yaoundé, Cameroun. Contact WhatsApp&nbsp;: <span data-wa-display></span>.</p></div>
+          <div><h3>Activité</h3><p>Vente de téléphones, chargeurs, audio, montres connectées, protections, sécurité, accessoires auto et pièces détachées. Retrait en boutique et livraison sur Yaoundé.</p></div>
+          <div><h3>Données personnelles</h3><p>Les informations que vous communiquez (nom, téléphone, adresse) servent uniquement à traiter votre commande et à vous répondre. Elles ne sont ni revendues ni partagées avec des tiers.</p></div>
+          <div><h3>Propriété intellectuelle</h3><p>Le nom KA SHOP, le logo et le contenu de ce site sont la propriété de KA SHOP. Toute reproduction sans autorisation est interdite.</p></div>
+        </div>
+        <div class="legal-pane" id="legal-pane-cgv">
+          <h2>Conditions générales de vente</h2>
+          <div><h3>1. Commandes</h3><p>Les commandes se finalisent par message WhatsApp. Le site n'exige aucun paiement en ligne&nbsp;: le prix et la disponibilité sont confirmés avec vous avant toute transaction.</p></div>
+          <div><h3>2. Prix</h3><p>Tous les prix sont affichés en francs CFA (FCFA), toutes taxes comprises. Ils peuvent évoluer selon les stocks&nbsp;; le prix confirmé sur WhatsApp fait foi.</p></div>
+          <div><h3>3. Paiement</h3><p>Paiement à la livraison ou au retrait&nbsp;: MTN Mobile Money, Orange Money ou espèces. Aucune donnée bancaire n'est demandée sur le site.</p></div>
+          <div><h3>4. Livraison</h3><p>Livraison sur Yaoundé&nbsp;: 1 000 FCFA jusqu'à 7 km, 2 000 FCFA de 7 à 15 km, sur devis au-delà. Offerte dès 50 000 FCFA d'achat. Retrait gratuit en boutique.</p></div>
+          <div><h3>5. Garantie &amp; retours</h3><p>Les produits sont testés avant remise. En cas de défaut constaté à la livraison, l'article est échangé. Contactez-nous sur WhatsApp pour toute question relative à la garantie.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/whatsapp.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

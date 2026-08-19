@@ -1,0 +1,38 @@
+# ── Secrets et variables d'environnement ────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Système d'exploitation ───────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+
+# ── Éditeurs ─────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Logs ─────────────────────────────────────────────────────────────────────
+*.log
+
+# ── Fichiers temporaires ─────────────────────────────────────────────────────
+*.tmp
+*.temp
+*.bak
+
+# ── Clés et certificats ──────────────────────────────────────────────────────
+*.key
+*.pem
+*.p12
+*.pfx
+*.cer
+*.crt
+*secret*
+*password*
+*credentials*
+*token*
