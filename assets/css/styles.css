@@ -135,7 +135,7 @@ img{max-width:100%}
 .cat-card{position:relative;overflow:hidden;text-align:left;background:var(--white);border:1px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:16px;aspect-ratio:3/4;box-shadow:var(--shadow);transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .3s ease}
 .cat-grid:hover .cat-card:not(:hover){transform:scale(0.97);opacity:.7}
 .cat-card:hover{transform:translateY(-8px);border-color:var(--red);box-shadow:0 28px 54px -24px rgba(226,3,3,.4)}
-.cat-card .overlay{position:absolute;inset:0;background-size:cover;background-position:center 30%;pointer-events:none}
+.cat-card .cat-bg{position:absolute;inset:0;background-size:cover;background-position:center 30%;pointer-events:none}
 .cat-card .icon{position:relative;width:44px;height:44px;border-radius:12px;background:var(--red-soft);color:var(--red);display:grid;place-items:center;transition:transform .25s ease,background .25s ease,color .25s ease}
 .cat-card:hover .icon{background:var(--red);color:#fff;transform:scale(1.1) rotate(-6deg)}
 .cat-card .body{position:relative;margin-top:auto}

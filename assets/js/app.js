@@ -215,7 +215,7 @@
         var n = PRODUCTS.filter(function (p) { return p.category === c.id; }).length;
         return (
           '<a class="cat-card" href="catalogue.html?cat=' + c.id + '">' +
-          '<span class="overlay' + (img ? ' has-img" style="background-image:linear-gradient(to top,rgba(10,9,8,.92) 8%,rgba(10,9,8,.35) 55%,rgba(10,9,8,.15)),url(\'' + img + '\')' : '') + '"></span>' +
+          '<span class="cat-bg' + (img ? ' has-img" style="background-image:linear-gradient(to top,rgba(10,9,8,.92) 8%,rgba(10,9,8,.35) 55%,rgba(10,9,8,.15)),url(\'' + img + '\')' : '') + '"></span>' +
           '<span class="icon">' + c.icon + '</span>' +
           '<span class="body"><span class="label ' + (img ? 'on-img' : '') + '">' + c.label + '</span><span class="count ' + (img ? 'on-img' : '') + '">' + n + ' produits</span></span>' +
           '<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>' +
