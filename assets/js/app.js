@@ -352,6 +352,12 @@
     });
 
     apply();
+
+    // Lien direct vers une fiche produit (ex: catalogue.html?id=p1), pour le partage WhatsApp et l'indexation Google.
+    var directId = params.get('id');
+    if (directId && PRODUCTS.some(function (p) { return p.id === directId; })) {
+      openDetail(directId);
+    }
   }
 
   /* ---------- devis : suivi de commande + formulaire ---------- */
